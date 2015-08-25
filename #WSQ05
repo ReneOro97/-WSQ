@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+double c, f;
+int main (){
+	cout << "Temperature in Farenheit: " ; cin>> f;
+	c = 5*(f - 32)/9;
+	cout << "Temperature in Celsius: " << c << endl;
+	
+	if (c >= 100) 
+	{
+	cout <<"Water boil at this temperature (under typical conditions)." << endl;
+	} else
+	{
+		cout <<"Water does not boil at this temperature (under typical conditions)." << endl;
+	}
+	
+}
