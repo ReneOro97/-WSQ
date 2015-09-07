@@ -1,0 +1,34 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+using namespace std;
+
+int main (){
+	int random, guess, count;
+	srand (time(NULL));
+	random=rand() %100+1;
+	count = 10;
+	cout << "I just pick a number between 1 and 100, you need to guess what it is" << endl;
+	cout << "Write your number: " ; cin >> guess;
+	
+	while (guess != random && count > 1){
+		count = count - 1;
+		if (guess > random)
+		{
+			cout << "Your number is higher than mine, keep trying jajaja" << endl;
+			cout << "You have now only " << count << " opportunities" << endl;
+		}
+		if (guess < random)
+		{
+			cout << "Your number is lower than mine, keep trying jajaja" << endl;
+			cout << "You have now only " << count << " opportunities" << endl;
+		}
+			cout << "Pick a new number: "; cin >> guess;
+				
+	}
+	if (count == 1){
+		cout << "YOU LOSE :) jajajaja you better go crying with you mother";
+	}
+	if (guess == random){
+		cout << "YOU WIN :( that's a shame... err I meant CONGRATULATIONS";
+	}
