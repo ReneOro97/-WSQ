@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+long superpower (long a, long b){
+	
+	if (b == 0){
+		return 1; 
+	}
+	else{
+		return a*superpower(a, b-1);
+	}
+ }
+
+int main (){
+	int a, b;
+	cout << "Write two numbers, the first one goes to the power of the second"<< endl;
+	cout << "First number: " ; cin >> a;
+	cout << "Second number: " ; cin >> b;
+	cout << superpower (a,b) <<endl;
