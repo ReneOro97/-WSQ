@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+string isPalindrome(string word){
+if (word == string(word.rbegin(), word.rend())) {
+return "It's a Palindrome";}
+else{
+return "It's not a Palindrome";
+}
+}
+int main()
+{
+string word;
+	cout << "Write a string to know if it's a palindrome"<< endl;
+    cin >> word;
+    cout<<isPalindrome(word)<<endl;
+}
