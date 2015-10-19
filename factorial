@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+#include "BigIntegerLibrary.hh"
+
+BigInteger factorial (BigInteger number)
+{
+	
+	BigInteger  fac = 1; 
+	for (BigInteger i = 1; i < number; i++){
+			fac = fac* i;
+			
+		}
+	return fac;
+}
+
+int main (){
+	int number; 
+
+cout << "Enter a positive integer: "; cin >> number;
+cout << "The factorial of " << number << " is " << factorial(number) << endl;
+	}
+	
+	
+	
