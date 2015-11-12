@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+double root(double x){
+    double a = x, b = 0;
+    while (b != a){
+        b = a;
+        a = (x/a + a)/2;
+    }
+    return a;
+}
+
+int main (){
+	int x;
+	cout << "I will calculate the root of the number that you want"<< endl;
+	cout << "Number: ";
+	cin >> x;
+	cout << "The root is: "<< root(x);
+}
