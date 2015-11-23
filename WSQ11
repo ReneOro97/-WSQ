@@ -1,0 +1,81 @@
+// Solving Problems with Programming
+// Professor Ken Bauer
+//
+// René Orozco
+// A01631233
+
+
+
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+#include "BigIntegerLibrary.hh"
+
+bool is_palindrome(BigInteger n){
+	string x = bigIntegerToString (n);
+	if (x == string(x.begin(), x.end())){
+    return true;
+	} 
+	else 
+	{
+    return false;
+	}
+}
+
+BigInteger apply196(BigInteger n){
+	string y = bigIntegerToString(n);
+	string (y.begin(), y.end());
+	BigInteger banana = stringToBigInteger (y);
+	n = n + banana;
+	return n;
+}
+
+
+int main() {
+	int lower, upper, natural = 0, become= 0, lychrel = 0;
+	BigInteger batman;
+cout << "Give me the lower bound:"<<endl;
+cin >> lower;
+cout << "Give me the upper bound:"<<endl;
+cin >> upper;
+
+for (int i = lower; i<= upper; i++)
+{
+	if(is_palindrome(i) == true)
+	{
+		natural++;
+	}
+	else
+	{
+		batman = apply196(i);
+		for (int j = 1; j<=30; j++)
+		{
+			if(is_palindrome (batman) == true)
+			{
+				
+				become++;
+				break;
+			}
+			else
+			{
+				batman = apply196(batman);
+			}
+			if(is_palindrome (batman) == false)
+			{
+				cout << batman << "It's a Lychrel number";
+				lychrel++;
+				cout<<endl;
+			}
+		}
+	}
+}
+cout << "Result of the program" << endl;
+cout << "The range was from "<< lower << " to "<< upper<< endl;
+cout << "The total numbers that was analysed was "<< (upper-lower)+1 <<endl;
+cout << "Number of natural palindromes: " << natural << endl;
+cout << "Numbers of non-Lychrel numbers: "<< become << endl;
+cout << "Number of Lychrel numbers: " << lychrel << endl;
+
+}
