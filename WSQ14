@@ -1,0 +1,25 @@
+#include <iostream> 
+#include <cmath>
+using namespace std;
+
+float calculate_e (float n) {
+float x=0.0, e=0.0;
+float factorial= 1;
+
+for(float j=1; j<=n ; j++)
+{
+      factorial = factorial * j;
+      x = x + 1/factorial;
+}
+    e = x + 1;
+return e;
+}
+
+int main ()
+{
+  float number;
+      cout << "How many decimals do you want for e?" << endl;
+      cin>>number;
+  cout <<"The approximate value of e is: " << calculate_e(number) << endl;
+  return 0;
+}
